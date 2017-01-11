@@ -229,6 +229,12 @@ static NSString *const FILE_NAME_UNIQUE_JSON = @"appinfo.json";
     [self runTaskWithLaunchPath:buildScriptPath andArgument:buildArgument];
 }
 
+- (void)runXcodePathScript{
+    scriptType = ScriptTypeXcodePath;
+    NSString *xcodePathSriptPath = [[NSBundle mainBundle] pathForResource:@"XcodePath" ofType:@"sh"];
+    [self runTaskWithLaunchPath:xcodePathSriptPath andArgument:nil];
+}
+
 #pragma mark → Run and Capture task data
 
 - (void)runTaskWithLaunchPath:(NSString *)launchPath andArgument:(NSArray *)arguments{
@@ -325,6 +331,16 @@ static NSString *const FILE_NAME_UNIQUE_JSON = @"appinfo.json";
                     [pipe.fileHandleForReading waitForDataInBackgroundAndNotify];
                 }
             }
+            
+            //Handle Xcode Path Response
+            else if (scriptType == ScriptTypeXcodePath){
+                
+            }
+            
+            //Handle AppStore Upload Response
+            else if (scriptType == ScriptTypeAppStoreUpload){
+                
+            }
         });
     }];
 }
@@ -334,7 +350,13 @@ static NSString *const FILE_NAME_UNIQUE_JSON = @"appinfo.json";
 -(void)checkIPACreated{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if ([[NSFileManager defaultManager] fileExistsAtPath:project.ipaFullPath.resourceSpecifier]){
-            [self getIPAInfoFromLocalURL:project.ipaFullPath];
+            if ([comboBuildType.stringValue isEqualToString: BuildTypeAppStore]){
+                //get required info and upload to appstore
+                [self runXcodePathScript];
+            }else{
+                //get ipa details and upload to dropbox
+                [self getIPAInfoFromLocalURL:project.ipaFullPath];
+            }
         }else{
             [self checkIPACreated];
         }

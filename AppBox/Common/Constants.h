@@ -17,8 +17,8 @@
 
 //Serives Key
 #define abDbRoot kDBRootAppFolder
-#define abDbAppkey @"" // Dropbox app key
-#define abDbScreatkey @"" //Dropbox secret key
+#define abDbAppkey @"mzwu8mq9xdtilpr"
+#define abDbScreatkey @"le27tu0m54mjlc0"
 #define abGoogleTiny @"AIzaSyD5c0jmblitp5KMZy2crCbueTU-yB1jMqI"
 
 //notification
@@ -59,6 +59,8 @@ typedef enum : NSUInteger {
     ScriptTypeGetScheme,
     ScriptTypeTeamId,
     ScriptTypeBuild,
+    ScriptTypeXcodePath,
+    ScriptTypeAppStoreUpload,
 } ScriptType;
 
 #endif /* Constants_h */

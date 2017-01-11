@@ -100,6 +100,7 @@
 		E16438A31D7469D900CE8B7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E167245E1E1D2AE000346502 /* CIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIViewController.h; sourceTree = "<group>"; };
 		E167245F1E1D2AE000346502 /* CIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIViewController.m; sourceTree = "<group>"; };
+		E16B7BC11E23C176004A882E /* XcodePath.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = XcodePath.sh; sourceTree = "<group>"; };
 		E172E13B1DEEB3B900405EF2 /* GetSchemeScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GetSchemeScript.sh; sourceTree = "<group>"; };
 		E188EA091D78485900EBCA52 /* BitlyURLShortenerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitlyURLShortenerService.h; sourceTree = "<group>"; };
 		E188EA0A1D78485900EBCA52 /* BitlyURLShortenerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitlyURLShortenerService.m; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 				E13946151DF2FBAD00B3FAD0 /* WorkspaceBuildScript.sh */,
 				E191F7C21E1E7B2A00D2A590 /* ALAppStoreUpload.sh */,
 				E191F7C31E1E7B3B00D2A590 /* XcodeAppStoreUpload.sh */,
+				E16B7BC11E23C176004A882E /* XcodePath.sh */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
